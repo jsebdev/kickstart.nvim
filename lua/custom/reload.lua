@@ -5,6 +5,7 @@ M.reload = function()
     'custom.keymaps',
     'custom.plugins',
     'custom.plugin_config.nvimtree',
+    'custom.plugin_config.telescope',
   }
 
   -- Reload init.lua
@@ -18,6 +19,7 @@ M.reload = function()
   require 'custom.keymaps'
   require 'custom.plugins'
   require('custom.plugin_config.nvimtree').setup()
+  require('custom.plugin_config.telescope').setup()
 
   print '🔁 Reload complete: init.lua + modules ✔️'
 end
