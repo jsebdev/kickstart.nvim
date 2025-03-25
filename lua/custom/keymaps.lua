@@ -6,14 +6,14 @@ vim.keymap.set('n', '<leader>xs', function()
 end, { desc = 'Reload init.lua' })
 
 -- automatically close opened parentesis
-vim.keymap.set('i', '(', '()<esc>i', { desc = 'close parentesis automatically' })
-vim.keymap.set('i', '{', '{}<esc>i', { desc = 'close parentesis automatically' })
-vim.keymap.set('i', '[', '[]<esc>i', { desc = 'close parentesis automatically' })
+-- vim.keymap.set('i', '(', '()<esc>i', { desc = 'close parentesis automatically' })
+-- vim.keymap.set('i', '{', '{}<esc>i', { desc = 'close parentesis automatically' })
+-- vim.keymap.set('i', '[', '[]<esc>i', { desc = 'close parentesis automatically' })
 
 -- automatically close opened quotes
-vim.keymap.set('i', '"', '""<esc>i', { desc = 'close parentesis automatically' })
-vim.keymap.set('i', "'", "''<esc>i", { desc = 'close parentesis automatically' })
-vim.keymap.set('i', '`', '``<esc>i', { desc = 'close parentesis automatically' })
+-- vim.keymap.set('i', '"', '""<esc>i', { desc = 'close parentesis automatically' })
+-- vim.keymap.set('i', "'", "''<esc>i", { desc = 'close parentesis automatically' })
+-- vim.keymap.set('i', '`', '``<esc>i', { desc = 'close parentesis automatically' })
 
 -- workspace shortcuts
 vim.keymap.set('n', '<leader>ww', ':w<cr>', { desc = '[W]orkspace [w]rite' })
