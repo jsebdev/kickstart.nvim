@@ -21,15 +21,15 @@ vim.keymap.set('n', '<leader>wW', ':wa<cr>', { desc = '[W]orkspace [w]rite all' 
 vim.keymap.set('n', '<leader>wq', ':q<cr>', { desc = '[W]orkspace [Q]uit' })
 vim.keymap.set('n', '<leader>wQ', ':qa<cr>', { desc = '[W]orkspace [Q]uit all' })
 vim.keymap.set('n', '<leader>wq', ':close<cr>', { desc = '[W]orkspace [q]quit' })
-vim.keymap.set('n', '<C-w>', ':close<CR>', { desc = 'quit current editor' })
+-- vim.keymap.set('n', '<C-w>', ':close<CR>', { desc = 'quit current editor' }) conflicts with <C-w> windows commands
 
 -- tab navigation
 -- map <C-S-k> in kitty
 -- vim.keymap.set('n', '<Esc>[1;6A', ':tabnext<CR>', { noremap = true, silent = true })
 -- map <C-S-j> in kitty
 -- vim.keymap.set('n', '<Esc>[1;6B', ':tabprevious<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-J>', ':tabprevious<CR>')
-vim.keymap.set('n', '<C-K>', ':tabnext<CR>')
+vim.keymap.set('n', '<C-j>', ':tabprevious<CR>')
+vim.keymap.set('n', '<C-k>', ':tabnext<CR>')
 
 -- windows management
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = '[W]orkspace split [V]ertically' })
