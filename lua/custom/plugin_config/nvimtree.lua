@@ -1,5 +1,5 @@
 local M = {}
-local map = require('utils.keymap').map
+local map = require('utils.keymap').defaultMap
 
 function M.setup()
   require('nvim-tree').setup {
@@ -8,8 +8,8 @@ function M.setup()
     },
   }
 
-  map('n', '<leader>e', ':NvimTreeToggle<CR>', 'toggle NvimTree')
-  map('n', '<leader>f', ':NvimTreeFindFile<CR>', 'Find file in NvimTree')
+  map('n', '<leader>dn', ':NvimTreeToggle<CR>', '[D]ocuments in [N]vimTree')
+  map('n', '<leader>df', ':NvimTreeFindFile<CR>', '[D]ocument: [F]ind in NvimTree')
 end
 
 return M

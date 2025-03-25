@@ -1,8 +1,7 @@
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
+local map = require('utils.keymap').defaultMap
 
 -- reload config
-vim.keymap.set('n', '<leader>sv', function()
+vim.keymap.set('n', '<leader>xs', function()
   require('custom.reload').reload()
 end, { desc = 'Reload init.lua' })
 
@@ -20,3 +19,24 @@ vim.keymap.set('i', '`', '``<esc>i', { desc = 'close parentesis automatically' }
 vim.keymap.set('n', '<leader>ww', ':w<cr>', { desc = '[W]orkspace [w]rite' })
 vim.keymap.set('n', '<leader>wW', ':wa<cr>', { desc = '[W]orkspace [w]rite all' })
 vim.keymap.set('n', '<leader>wq', ':q<cr>', { desc = '[W]orkspace [q]quit' })
+map('n', '<leader>wq', ':q<cr>', '[W]orkspace [Q]uit')
+map('n', '<leader>wQ', ':qa<cr>', '[W]orkspace [Q]uit all')
+
+-- tab navigation
+-- map <C-S-k> in kitty
+-- vim.keymap.set('n', '<Esc>[1;6A', ':tabnext<CR>', { noremap = true, silent = true })
+-- map <C-S-j> in kitty
+-- vim.keymap.set('n', '<Esc>[1;6B', ':tabprevious<CR>', { noremap = true, silent = true })
+
+-- windows management
+-- split windows
+vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<leader>sh', ':split<CR>', { desc = 'Split window horizontally' })
+
+-- resize windows
+vim.keymap.set('n', '<A-h>', ':vertical resize -2<CR>', { desc = 'Resize window left' })
+vim.keymap.set('n', '<A-l>', ':vertical resize +2<CR>', { desc = 'Resize window right' })
+vim.keymap.set('n', '<A-j>', ':resize -2<CR>', { desc = 'Resize window down' })
+vim.keymap.set('n', '<A-k>', ':resize +2<CR>', { desc = 'Resize window up' })
+
+vim.keymap.set('n', '<leader>wz', ':tab split<CR>', { desc = '[W]orkspace [Z]oom windows to new tab' })
