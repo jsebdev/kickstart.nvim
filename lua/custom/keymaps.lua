@@ -27,6 +27,8 @@ map('n', '<leader>wQ', ':qa<cr>', '[W]orkspace [Q]uit all')
 -- vim.keymap.set('n', '<Esc>[1;6A', ':tabnext<CR>', { noremap = true, silent = true })
 -- map <C-S-j> in kitty
 -- vim.keymap.set('n', '<Esc>[1;6B', ':tabprevious<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-J>', ':tabprevious<CR>')
+vim.keymap.set('n', '<C-K>', ':tabnext<CR>')
 
 -- windows management
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = '[W]orkspace split [V]ertically' })
