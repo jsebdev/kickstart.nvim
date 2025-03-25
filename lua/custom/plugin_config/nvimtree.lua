@@ -8,8 +8,8 @@ function M.setup()
     },
   }
 
-  map('n', '<leader>dt', ':NvimTreeToggle<CR>', '[D]ocuments in Nvim[T]ree')
-  map('n', '<leader>df', ':NvimTreeFindFile<CR>', '[D]ocument: [F]ind in NvimTree')
+  map('n', '<leader>ee', ':NvimTreeToggle<CR>', 'Open NvimTree')
+  map('n', '<leader>ef', ':NvimTreeFindFile<CR>', 'Find file in NvimTree')
 end
 
 return M
