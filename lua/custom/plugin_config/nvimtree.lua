@@ -8,7 +8,7 @@ function M.setup()
     },
   }
 
-  map('n', '<leader>dn', ':NvimTreeToggle<CR>', '[D]ocuments in [N]vimTree')
+  map('n', '<leader>dt', ':NvimTreeToggle<CR>', '[D]ocuments in Nvim[T]ree')
   map('n', '<leader>df', ':NvimTreeFindFile<CR>', '[D]ocument: [F]ind in NvimTree')
 end
 
