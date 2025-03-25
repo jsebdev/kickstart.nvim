@@ -163,7 +163,6 @@ vim.opt.confirm = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
-require 'custom/keymaps'
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -1030,3 +1029,10 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+
+-- MY Personal config
+
+-- I had to require my personal keymaps at the end because if I do it before
+-- the <C-*> maps with * being a Capital character were not working
+require 'custom/keymaps'
