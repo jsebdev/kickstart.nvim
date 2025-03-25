@@ -30,8 +30,8 @@ map('n', '<leader>wQ', ':qa<cr>', '[W]orkspace [Q]uit all')
 
 -- windows management
 -- split windows
-vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { desc = 'Split window vertically' })
-vim.keymap.set('n', '<leader>sh', ':split<CR>', { desc = 'Split window horizontally' })
+vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = '[W]orkspace split [V]ertically' })
+vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = '[W]orkspace split [H]orizontally' })
 
 -- resize windows
 vim.keymap.set('n', '<A-h>', ':vertical resize -2<CR>', { desc = 'Resize window left' })
@@ -40,3 +40,6 @@ vim.keymap.set('n', '<A-j>', ':resize -2<CR>', { desc = 'Resize window down' })
 vim.keymap.set('n', '<A-k>', ':resize +2<CR>', { desc = 'Resize window up' })
 
 vim.keymap.set('n', '<leader>wz', ':tab split<CR>', { desc = '[W]orkspace [Z]oom windows to new tab' })
+
+-- Debug helpers
+map('n', 'di', require('utils.LogRawKeySequence').LogRawKeySequence, '[D]ebug [I]nput')
