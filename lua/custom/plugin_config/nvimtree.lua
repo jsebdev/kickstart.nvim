@@ -14,7 +14,6 @@ local function my_on_attach(bufnr)
   -- custom mappings
   vim.keymap.del('n', '<C-k>', { buffer = bufnr })
   vim.keymap.set('n', '<C-i>', api.node.show_info_popup, opts 'Info')
-  print 'nvim tree attach'
 end
 
 function M.setup()

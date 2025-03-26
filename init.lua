@@ -961,4 +961,8 @@ require('lazy').setup({
 -- I had to require my personal keymaps at the end because if I do it before
 -- the <C-*> maps with * being a Capital character were not working
 require 'custom/keymaps'
-require 'custom.utils.reload_file'
+
+
+-- autocmds
+require 'custom.autocmds.reload_file'
+require 'custom.autocmds.nvimtree'
