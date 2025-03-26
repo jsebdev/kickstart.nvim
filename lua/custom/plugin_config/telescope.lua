@@ -1,9 +1,9 @@
 local M = {}
-local telescopeConfig = require("telescope.config")
+local telescopeConfig = require 'telescope.config'
 
 local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
 -- serach in hidden/dot files
-table.insert(vimgrep_arguments, "--hidden")
+table.insert(vimgrep_arguments, '--hidden')
 
 function M.setup()
   -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -43,6 +43,7 @@ function M.setup()
       find_files = {
         no_ignore = true,
         hidden = true,
+        find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
       },
     },
     extensions = {
