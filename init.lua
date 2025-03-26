@@ -962,6 +962,7 @@ require('lazy').setup({
 -- the <C-*> maps with * being a Capital character were not working
 require 'custom/keymaps'
 
+vim.opt.backupcopy = 'yes'
 
 -- autocmds
 require 'custom.autocmds.reload_file'
