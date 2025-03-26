@@ -2,7 +2,7 @@
 
 -- reload config
 vim.keymap.set('n', '<leader>xs', function()
-  require('custom.reload').reload()
+  require('custom.utils.reload').reload()
 end, { desc = 'Reload init.lua' })
 
 -- automatically close opened parentesis
@@ -18,9 +18,8 @@ end, { desc = 'Reload init.lua' })
 -- workspace shortcuts
 vim.keymap.set('n', '<leader>ww', ':w<cr>', { desc = '[W]orkspace [w]rite' })
 vim.keymap.set('n', '<leader>wW', ':wa<cr>', { desc = '[W]orkspace [w]rite all' })
-vim.keymap.set('n', '<leader>wq', ':q<cr>', { desc = '[W]orkspace [Q]uit' })
 vim.keymap.set('n', '<leader>wQ', ':qa<cr>', { desc = '[W]orkspace [Q]uit all' })
-vim.keymap.set('n', '<leader>wq', ':close<cr>', { desc = '[W]orkspace [q]quit' })
+vim.keymap.set('n', '<leader>wq', ':q<cr>', { desc = '[W]orkspace [q]quit' })
 -- vim.keymap.set('n', '<C-w>', ':close<CR>', { desc = 'quit current editor' }) conflicts with <C-w> windows commands
 
 -- tab navigation
