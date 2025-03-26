@@ -95,6 +95,13 @@ function M.setup()
   vim.keymap.set('n', '<leader>sn', function()
     builtin.find_files { cwd = vim.fn.stdpath 'config', hidden = true }
   end, { desc = '[S]earch [N]eovim files' })
+
+  vim.keymap.set('n', '<leader>sa', function()
+    builtin.live_grep {
+      prompt_title = 'Live grep in all files even ignored by gitignore',
+      additional_args = { '--no-ignore'},
+    }
+  end, { desc = '[S]earch in [A]ll Files' })
 end
 
 return M
