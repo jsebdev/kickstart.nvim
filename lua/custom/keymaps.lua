@@ -49,4 +49,4 @@ vim.keymap.set('n', '<C-_>', 'gcc', { remap = true, desc = 'comment single line'
 vim.keymap.set('v', '<C-_>', 'gc', { remap = true, desc = 'comment single line' })
 
 -- smart selection ignoring escaped quotes
-vim.keymap.set('n', 'vi"', require('custom.utils.select_inside_unescaped_quotes').select_inside_unescaped_quotes, { noremap = true, silent = true })
+vim.keymap.set({ 'o', 'x' }, 'iq', require('custom.utils.select_inside_unescaped_quotes').select_inside_unescaped_quotes, { desc = 'smart inside quotes' })

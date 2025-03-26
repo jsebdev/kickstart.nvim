@@ -102,9 +102,9 @@ function M.select_inside_unescaped_quotes()
   --      - move the cursor to `vstart`
   --      - start visual mode
   --      - move the cursor to `vend`
-  vim.api.nvim_win_set_cursor(0, { vstart[1], vstart[2] })
-  vim.cmd("normal! v")
-  vim.api.nvim_win_set_cursor(0, { vend[1], vend[2] })
+  vim.fn.setpos("'<", { 0, vstart[1], vstart[2]+1, 0 })  -- start of selection
+  vim.fn.setpos("'>", { 0, vend[1], vend[2]+1, 0 }) -- end of selection
+  vim.cmd("normal! gv")                -- reselect the visual area
 end
 
 return M
