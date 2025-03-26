@@ -45,6 +45,9 @@ function M.setup()
         hidden = true,
         find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
       },
+      live_grep = {
+        glob_pattern = { '!**/node_modules/*' },
+      },
     },
     extensions = {
       ['ui-select'] = {
