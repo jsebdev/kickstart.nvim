@@ -961,4 +961,4 @@ require('lazy').setup({
 -- I had to require my personal keymaps at the end because if I do it before
 -- the <C-*> maps with * being a Capital character were not working
 require 'custom/keymaps'
-require 'custom.reload_file'
+require 'custom.utils.reload_file'

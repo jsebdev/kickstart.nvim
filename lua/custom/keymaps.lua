@@ -1,4 +1,4 @@
-local map = require('utils.keymap').defaultMap
+-- local map = require('custom.utils.keymap').defaultMap
 
 -- reload config
 vim.keymap.set('n', '<leader>xs', function()
@@ -48,3 +48,6 @@ vim.keymap.set('n', '<leader>wz', ':tab split<CR>', { desc = '[W]orkspace [Z]oom
 -- the one I want is <C-/> but for some reason I had to map <C-_> instead
 vim.keymap.set('n', '<C-_>', 'gcc', { remap = true, desc = 'comment single line' })
 vim.keymap.set('v', '<C-_>', 'gc', { remap = true, desc = 'comment single line' })
+
+-- smart selection ignoring escaped quotes
+vim.keymap.set('n', 'vi"', require('custom.utils.select_inside_unescaped_quotes').select_inside_unescaped_quotes, { noremap = true, silent = true })

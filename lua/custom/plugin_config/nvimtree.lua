@@ -1,5 +1,5 @@
 local M = {}
-local map = require('utils.keymap').defaultMap
+local map = require('custom.utils.keymap').defaultMap
 
 local function my_on_attach(bufnr)
   local api = require 'nvim-tree.api'
