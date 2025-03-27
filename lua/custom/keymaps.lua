@@ -36,6 +36,17 @@ vim.keymap.set({'n', 'i'}, '<C-k>', function()
   vim.cmd('tabnext')
 end, { noremap = true, silent = true })
 
+vim.keymap.set("n", "<leader>wc", function()
+  local current_tab = vim.api.nvim_get_current_tabpage()
+  for _, tab in ipairs(vim.api.nvim_list_tabpages()) do
+    if tab ~= current_tab then
+      vim.api.nvim_set_current_tabpage(tab)
+      vim.cmd("tabclose")
+    end
+  end
+  vim.api.nvim_set_current_tabpage(current_tab)
+end, { desc = "[W]orkspace [C]lose all other tabs" })
+
 -- windows management
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = '[W]orkspace split [V]ertically' })
 vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = '[W]orkspace split [H]orizontally' })
