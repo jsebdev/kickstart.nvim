@@ -400,11 +400,7 @@ require('lazy').setup({
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
       {
         'williamboman/mason.nvim',
-        opts = {
-          ensure_installed = {
-            'pyright',
-          },
-        },
+        opts = { },
       },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
