@@ -27,8 +27,14 @@ vim.keymap.set('n', '<C-q>', ':close<CR>', { desc = 'quit current editor' })
 -- vim.keymap.set('n', '<Esc>[1;6A', ':tabnext<CR>', { noremap = true, silent = true })
 -- map <C-S-j> in kitty
 -- vim.keymap.set('n', '<Esc>[1;6B', ':tabprevious<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-j>', ':tabprevious<CR>')
-vim.keymap.set('n', '<C-k>', ':tabnext<CR>')
+vim.keymap.set({'n', 'i'}, '<C-j>', function()
+  vim.cmd('stopinsert')
+  vim.cmd('tabprevious')
+end, { noremap = true, silent = true })
+vim.keymap.set({'n', 'i'}, '<C-k>', function()
+  vim.cmd('stopinsert')
+  vim.cmd('tabnext')
+end, { noremap = true, silent = true })
 
 -- windows management
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = '[W]orkspace split [V]ertically' })
