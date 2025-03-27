@@ -45,7 +45,7 @@ vim.keymap.set('n', '<A-l>', ':vertical resize +2<CR>', { desc = 'Resize window 
 vim.keymap.set('n', '<A-j>', ':resize -2<CR>', { desc = 'Resize window down' })
 vim.keymap.set('n', '<A-k>', ':resize +2<CR>', { desc = 'Resize window up' })
 
-vim.keymap.set('n', '<leader>wz', ':tab split<CR>', { desc = '[W]orkspace [Z]oom windows to new tab' })
+vim.keymap.set('n', '<leader>wz', function() vim.cmd('tab split') end, { desc = '[W]orkspace [Z]oom windows to new tab' })
 
 -- Debug helpers
 --map('n', 'di', require('utils.LogRawKeySequence').LogRawKeySequence, '[D]ebug [I]nput')
