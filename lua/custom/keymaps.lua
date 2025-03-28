@@ -70,3 +70,7 @@ vim.keymap.set({ 'o', 'x' }, 'iq', require('custom.utils.select_inside_unescaped
 
 -- formating
 vim.keymap.set({'n', 'x'}, '=', function() vim.lsp.buf.format {async = false} end, { desc = 'Autoformat'})
+
+-- esc insertmode
+vim.keymap.set('i', '<Esc>', '<Nop>', { noremap = true })
+vim.keymap.set('i', 'kj', '<Esc>', {noremap = true, silent = true})
