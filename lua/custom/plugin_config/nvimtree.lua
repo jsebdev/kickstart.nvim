@@ -33,14 +33,13 @@ function M.setup()
   map('n', '<leader>ee', ':NvimTreeToggle<CR>', 'Open NvimTree')
   map('n', '<leader>ef', ':NvimTreeFindFile<CR>', 'Find file in NvimTree')
 
-  vim.keymap.set("n", "<leader>er", function()
-    local api = require("nvim-tree.api")
+  vim.keymap.set('n', '<leader>er', function()
+    local api = require 'nvim-tree.api'
     local root = vim.fn.getcwd()
-    print("the roor dir is " .. _G.nvim_tree_initial_root)
+    print('the roor dir is ' .. _G.nvim_tree_initial_root)
     api.tree.change_root(_G.nvim_tree_initial_root)
     api.tree.reload()
-  end, { desc = "[E]xplore [R]eset NvimTree to project root" })
-
+  end, { desc = '[E]xplore [R]eset NvimTree to project root' })
 end
 
 return M
