@@ -43,7 +43,7 @@ function M.setup()
       find_files = {
         no_ignore = true,
         hidden = true,
-        find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
+        find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*', '--glob', '!**/node_modules/*' },
       },
       live_grep = {
         glob_pattern = { '!**/node_modules/*' },
