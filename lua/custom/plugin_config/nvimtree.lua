@@ -14,6 +14,9 @@ local function my_on_attach(bufnr)
   -- custom mappings
   vim.keymap.del('n', '<C-k>', { buffer = bufnr })
   vim.keymap.set('n', '<C-i>', api.node.show_info_popup, opts 'Info')
+
+  vim.keymap.del('n', 'a', { buffer = bufnr })
+  vim.keymap.set('n', '<C-n><C-f>', api.fs.create, opts 'Create File Or Directory')
 end
 
 -- Store the initial root (directory you opened with `nvim .`)
