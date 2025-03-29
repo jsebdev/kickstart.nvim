@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
+  "autoclose.nvim": { "branch": "main", "commit": "b2077aa2c83df7ebc19b2a20a3a0654b24ae9c8f" },
   "avante.nvim": { "branch": "main", "commit": "d698dbe17ad94a0efde2355266e5afacb3851163" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "99290b3ec1322070bcfb9e846450a46f6efa50f0" },
   "cmp-nvim-lsp-signature-help": { "branch": "main", "commit": "031e6ba70b0ad5eee49fd2120ff7a2e325b17fa7" },
@@ -19,7 +20,6 @@
   "mason-tool-installer.nvim": { "branch": "main", "commit": "98767d37f8e5255a5111fc1e3163232d4dc07bda" },
   "mason.nvim": { "branch": "main", "commit": "fc98833b6da5de5a9c5b1446ac541577059555be" },
   "mini.pick": { "branch": "main", "commit": "4dfc0a21f16d34e9b2429b96d62788ed8a65e6cd" },
-  "multicursor.nvim": { "branch": "1.0", "commit": "7d3b16fbd86d0de77f7dc25bf2b923796eb37537" },
   "none-ls-extras.nvim": { "branch": "main", "commit": "1214d729e3408470a7b7a428415a395e5389c13c" },
   "none-ls.nvim": { "branch": "main", "commit": "a117163db44c256d53c3be8717f3e1a2a28e6299" },
   "nui.nvim": { "branch": "main", "commit": "8d3bce9764e627b62b07424e0df77f680d47ffdb" },
