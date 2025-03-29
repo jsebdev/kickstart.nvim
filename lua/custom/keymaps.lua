@@ -19,8 +19,8 @@ end, { desc = 'Reload init.lua' })
 vim.keymap.set('n', '<leader>ww', ':w<cr>', { desc = '[W]orkspace [w]rite' })
 vim.keymap.set('n', '<leader>wW', ':wa<cr>', { desc = '[W]orkspace [w]rite all' })
 vim.keymap.set('n', '<leader>wQ', ':qa<cr>', { desc = '[W]orkspace [Q]uit all' })
-vim.keymap.set('n', '<leader>wq', ':q<cr>', { desc = '[W]orkspace [q]quit' })
-vim.keymap.set('n', '<C-q>', ':close<CR>', { desc = 'quit current editor' })
+vim.keymap.set('n', '<leader>wq', require('custom.utils.smart_windows_close').smart_windows_close, { desc = '[W]orkspace [q]quit' })
+vim.keymap.set('n', '<C-q>', require('custom.utils.smart_windows_close').smart_windows_close, { desc = '[W]orkspace [q]quit' })
 
 -- tab navigation
 -- map <C-S-k> in kitty
