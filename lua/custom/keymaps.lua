@@ -74,3 +74,7 @@ vim.keymap.set({'n', 'x'}, '=', function() vim.lsp.buf.format {async = false} en
 -- esc insertmode
 vim.keymap.set('i', '<Esc>', '<Nop>', { noremap = true })
 vim.keymap.set('i', 'kj', '<Esc>', {noremap = true, silent = true})
+
+-- yank and selected registers
+vim.keymap.set({'n', 'v'}, '<C-c>', '"+y', { desc = 'Copy to clipboard' })
+-- <C-v> already pastes from clipboard somehow
