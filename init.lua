@@ -887,7 +887,9 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim',
+        'vimdoc',
+        'python', 'javascript', 'typescript', 'tsx', 'json', 'yaml', 'css', 'scss' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -964,8 +966,7 @@ require('lazy').setup({
 -- I had to require my personal keymaps at the end because if I do it before
 -- the <C-*> maps with * being a Capital character were not working
 require 'custom/keymaps'
-
-vim.opt.backupcopy = 'yes'
+require 'custom/options'
 
 -- autocmds
 require 'custom.autocmds.reload_file'
