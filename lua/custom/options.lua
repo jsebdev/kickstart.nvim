@@ -5,6 +5,5 @@ vim.opt.backupcopy = 'yes'
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = true
--- vim.o.foldlevel = 99 -- Start with all folds open
-
+vim.o.foldlevel = 1
 
