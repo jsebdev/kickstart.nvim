@@ -602,7 +602,11 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
         -- python lsp
-        pyright = {},
+        pyright = {
+          before_init =  function(_, config)
+            config.settings.python.pythonPath = require('custom.utils.get_python_path').get_python_path()
+          end
+        },
         -- pylsp = {},
         --
 
