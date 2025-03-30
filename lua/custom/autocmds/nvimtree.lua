@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
     local view = require("nvim-tree.view")
     if view.is_visible() and not api.tree.is_tree_buf() then
       api.tree.close()
-      print("closing")
+      print("closing nvim-tree")
     end
   end
 })

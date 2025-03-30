@@ -968,6 +968,8 @@ require('lazy').setup({
 --
 
 -- MY Personal config
+-- the global state must be loaded before any other custom config that might use it
+require('custom.global_state')
 
 -- I had to require my personal keymaps at the end because if I do it before
 -- the <C-*> maps with * being a Capital character were not working

@@ -19,8 +19,17 @@ end, { desc = 'Reload init.lua' })
 vim.keymap.set('n', '<leader>ww', ':w<cr>', { desc = '[W]orkspace [w]rite' })
 vim.keymap.set('n', '<leader>wW', ':wa<cr>', { desc = '[W]orkspace [w]rite all' })
 vim.keymap.set('n', '<leader>wQ', ':qa<cr>', { desc = '[W]orkspace [Q]uit all' })
-vim.keymap.set('n', '<leader>wq', require('custom.utils.smart_windows_close').smart_windows_close, { desc = '[W]orkspace [q]quit' })
-vim.keymap.set('n', '<C-q>', require('custom.utils.smart_windows_close').smart_windows_close, { desc = '[W]orkspace [q]quit' })
+
+vim.keymap.set('n', '<leader>wq', function()
+  require('custom.utils.smart_windows_close').smart_windows_close(_G.closed_buffers)
+end, { desc = '[W]orkspace [q]quit' })
+vim.keymap.set('n', '<C-q>', function()
+  require('custom.utils.smart_windows_close').smart_windows_close(_G.closed_buffers)
+end, { desc = '[W]orkspace [q]quit' })
+
+vim.keymap.set('n', '<leader>wr', function()
+  require('custom.utils.open_closed_buffer').open_closed_buffer(_G.closed_buffers)
+end, { desc = '[W]orkspace [r]eopen last closed buffer' })
 
 -- tab navigation
 -- map <C-S-k> in kitty
