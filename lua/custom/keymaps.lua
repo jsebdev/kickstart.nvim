@@ -105,3 +105,54 @@ end, { desc = '[T]oggle [R]elative numbers' })
 -- yank and selected registers
 vim.keymap.set({'n', 'v'}, '<C-c>', '"+y', { desc = 'Copy to clipboard' })
 -- <C-v> already pastes from clipboard somehow
+
+-- debug printers
+local function escape_for_fstring(text) -- Escape function for f-string-safe usage
+  text = text:gsub('\\', '\\\\')   -- escape backslashes
+  text = text:gsub('"', '\\"')     -- escape double quotes
+  text = text:gsub('{', '{{')      -- escape left braces
+  text = text:gsub('}', '}}')      -- escape right braces
+  return text
+end
+
+vim.keymap.set('n', '<leader>dp', function()
+  local line_num = vim.fn.line('.')
+  local line_text = vim.fn.getline('.')
+  local safe_text = escape_for_fstring(line_text)
+  local snippet = string.format([[print(f"%d: %s >>>\n{%s}")]], line_num, safe_text, line_text)
+  vim.api.nvim_put({ snippet }, 'l', true, true)
+end, { desc = "[D]ebug print [Python] (line)", noremap = true })
+
+-- vim.keymap.set('x', '<C-S-z>p', function()
+--   local line_num = vim.fn.line('.')
+--   local selected = vim.fn.getreg('"')
+--   local safe_selected = escape_for_fstring(selected)
+--   local snippet = string.format([[print(f"%d: %s >>>\n{%s}")]], line_num, safe_selected, selected)
+--   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
+--   vim.api.nvim_put({ snippet }, 'l', true, true)
+-- end, { desc = "[D]ebug print [Python]", noremap = true })
+--
+vim.keymap.set('v', '<leader>dp', function()
+  -- Get visual selection range
+  local start_pos = vim.fn.getpos("'<")
+  print("Start position: " .. vim.inspect(start_pos))
+  local end_pos = vim.fn.getpos("'>")
+  print("End position: " .. vim.inspect(end_pos))
+
+  -- Exit visual mode cleanly before any other action
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'x', false)
+
+  -- Join selected lines into a single string
+  local lines = vim.fn.getline(start_pos[2], end_pos[2])
+  print("Selected lines: " .. vim.inspect(lines))
+  -- local selected_text = table.concat(lines, '\n')
+  -- print("Selected text: " .. selected_text)
+  --
+  -- local safe_text = escape_for_fstring(selected_text)
+  -- local line_num = vim.fn.line('.')
+  -- local snippet = string.format([[print(f"%d: %s >>>\n{%s}")]], line_num, safe_text, selected_text)
+  -- print("Snippet: " .. snippet)
+  --
+  -- -- Put the debug print below
+  -- vim.api.nvim_put({ snippet }, 'l', true, true)
+end, { desc = "[D]ebug print [Python] (selection)", noremap = true })
