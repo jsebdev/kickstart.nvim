@@ -97,6 +97,11 @@ vim.keymap.set({'n', 'x'}, '=', function() vim.lsp.buf.format {async = false} en
 vim.keymap.set('i', '<Esc>', '<Nop>', { noremap = true })
 vim.keymap.set('i', 'kj', '<Esc>', {noremap = true, silent = true})
 
+-- toggles
+vim.keymap.set('n', '<leader>tr', function()
+  vim.opt.relativenumber = not vim.wo.relativenumber
+end, { desc = '[T]oggle [R]elative numbers' })
+
 -- yank and selected registers
 vim.keymap.set({'n', 'v'}, '<C-c>', '"+y', { desc = 'Copy to clipboard' })
 -- <C-v> already pastes from clipboard somehow
