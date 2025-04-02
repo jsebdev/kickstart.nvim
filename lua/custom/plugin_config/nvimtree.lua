@@ -29,6 +29,10 @@ function M.setup()
       width = 30,
     },
     on_attach = my_on_attach,
+    filters = {
+      dotfiles = false,
+      git_ignored = false,
+    }
   }
 
   map('n', '<leader>ee', ':NvimTreeToggle<CR>', 'Open NvimTree')
