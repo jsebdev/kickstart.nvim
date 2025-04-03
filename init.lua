@@ -459,7 +459,7 @@ require('lazy').setup({
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('custom.utils.lsp_def_in_new_tab_or_references').lsp_def_in_new_tab_or_references, '[G]oto [D]efinition')
+          map('gd', require('telescope.builtin').lsp_definitions,'[G]oto [D]efinition')
           map('<F12>', require('custom.utils.lsp_def_in_new_tab_or_references').lsp_def_in_new_tab_or_references, '[G]oto [D]efinition')
 
           -- Find references for the word under your cursor.

@@ -27,7 +27,6 @@ M.lsp_def_in_new_tab_or_references = function()
     end
 
     -- Check if we're already at one of the definition locations
-    print('Check if we\'re already at one of the definition locations')
     for _, def in ipairs(result) do
       local uri = def.uri or def.targetUri
       local range = def.range or def.targetSelectionRange
