@@ -1,12 +1,26 @@
 -- Auto close nvim-tree when opening a file
 vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
-  callback = function()
+  callback = function(args)
     local api = require("nvim-tree.api")
     local view = require("nvim-tree.view")
-    if view.is_visible() and not api.tree.is_tree_buf() then
+
+    local bufnr = args.buf
+    local filetype = vim.bo[bufnr].filetype
+    local bufname = vim.api.nvim_buf_get_name(bufnr)
+
+    -- Only close if:
+    -- 1. Tree is visible
+    -- 2. This buffer is not NvimTree or other pseudo-buffers
+    -- 3. The buffer has a real name (not like [No Name] or empty string)
+    if view.is_visible()
+      and filetype ~= "NvimTree"
+      and filetype ~= "neo-tree"
+      and filetype ~= "TelescopePrompt"
+      and bufname ~= ""
+      and not bufname:match("^%[.+%]") -- e.g. [No Name], [scratch]
+    then
       api.tree.close()
-      print("closing nvim-tree")
     end
   end
 })
