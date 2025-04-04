@@ -38,6 +38,7 @@ function M.setup()
     -- },
     defaults = {
       vimgrep_arguments = vimgrep_arguments,
+      path_display = { 'smart' },
     },
     pickers = {
       find_files = {
