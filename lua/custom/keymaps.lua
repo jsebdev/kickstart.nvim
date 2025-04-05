@@ -106,6 +106,8 @@ vim.keymap.set('n', '<leader>tr', function()
   vim.opt.relativenumber = not vim.wo.relativenumber
 end, { desc = '[T]oggle [R]elative numbers' })
 
+vim.keymap.set('n', '<leader>tb', require('custom.utils.toggle_big_files_stuff').toggle_big_files_stuff, { desc = '[T]oggle [B]ig file mode (buffer-local)' })
+
 -- yank and selected registers
 vim.keymap.set({'n', 'v'}, '<C-c>', '"+y', { desc = 'Copy to clipboard' })
 -- <C-v> already pastes from clipboard somehow
