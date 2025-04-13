@@ -111,3 +111,14 @@ vim.keymap.set('n', '<leader>tb', require('custom.utils.toggle_big_files_stuff')
 -- yank and selected registers
 vim.keymap.set({'n', 'v'}, '<C-c>', '"+y', { desc = 'Copy to clipboard' })
 -- <C-v> already pastes from clipboard somehow
+
+
+-- smart debug prints
+vim.keymap.set('n', '<leader>zp', function()
+  require('custom.utils.smart_print').print_current_line_with_formats('print(">>>>>%s:%d \'%s\'")', 'print(%s)')
+end, { desc = "Smart print in python" })
+
+vim.keymap.set('n', '<leader>zj', function()
+  require('custom.utils.smart_print').print_current_line_with_formats('console.log(">>>>>%s:%d \'%s\'")', 'console.log(%s)')
+end, { desc = "Smart print in javascript" })
+
