@@ -76,7 +76,7 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      provider = "openai",
+      provider = "claude",
       openai = {
         endpoint = "https://api.openai.com/v1",
         model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
@@ -85,6 +85,11 @@ return {
         max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
         --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
       },
+      mappings = {
+        sidebar = {
+          switch_windows = "<C-n>",
+        }
+      }
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
