@@ -16,6 +16,5 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "#111111", fg = "#bbbbcc" })
 vim.api.nvim_set_hl(0, "Visual", { bg = "#555555", fg = "#000000" })
 
 
--- suggested by avante.nvim
-vim.opt.laststatus = 3
+vim.opt.laststatus = 1
 
