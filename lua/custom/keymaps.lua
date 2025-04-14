@@ -119,7 +119,7 @@ vim.keymap.set('n', '<leader>zp', function()
 end, { desc = "Smart print in python" })
 
 vim.keymap.set('n', '<leader>zj', function()
-  require('custom.utils.smart_print').print_current_line_with_formats('console.log(">>>>>%s:%d \'%s\'")', 'console.log(%s)')
+  require('custom.utils.smart_print').print_current_line_with_formats('console.log(">>>>>%s:%d \'%s\'");', 'console.log(%s);')
 end, { desc = "Smart print in javascript" })
 
 
