@@ -81,7 +81,7 @@ end, { desc = '[W]orkspace Resize window up [K]' })
 vim.keymap.set('n', '<leader>wz', function() vim.cmd('tab split') end, { desc = '[W]orkspace [Z]oom windows to new tab' })
 
 -- Debug helpers
---map('n', 'di', require('utils.LogRawKeySequence').LogRawKeySequence, '[D]ebug [I]nput')
+vim.keymap.set('n', '<leader>di', require('custom.utils.LogRawKeySequence').LogRawKeySequence, { desc = '[D]ebug [I]nput'})
 
 -- the one I want is <C-/> but for some reason I had to map <C-_> instead
 vim.keymap.set('n', '<C-_>', 'gcc', { remap = true, desc = 'comment single line' })
