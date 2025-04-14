@@ -122,3 +122,19 @@ vim.keymap.set('n', '<leader>zj', function()
   require('custom.utils.smart_print').print_current_line_with_formats('console.log(">>>>>%s:%d \'%s\'")', 'console.log(%s)')
 end, { desc = "Smart print in javascript" })
 
+
+-- move tabs
+vim.keymap.set({'n', 'i', 'v'}, '<A-u>', function()
+  local current = vim.fn.tabpagenr()
+  if current > 1 then
+    vim.cmd('-tabmove')
+  end
+end, { desc = 'Move tab left' })
+
+vim.keymap.set({'n', 'i', 'v'}, '<A-i>', function()
+  local current = vim.fn.tabpagenr()
+  local total = vim.fn.tabpagenr('$')
+  if current < total then
+    vim.cmd('+tabmove')
+  end
+end, { desc = 'Move tab right' })
