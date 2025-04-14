@@ -15,4 +15,5 @@ vim.opt.spelllang = { 'en_us' }
 vim.api.nvim_set_hl(0, "Normal", { bg = "#111111", fg = "#bbbbcc" })
 vim.api.nvim_set_hl(0, "Visual", { bg = "#555555", fg = "#000000" })
 
-
+-- autocomplete in command line
+vim.opt.wildmode = "longest:full,full"
