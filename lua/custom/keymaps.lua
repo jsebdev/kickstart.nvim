@@ -138,3 +138,13 @@ vim.keymap.set({'n', 'i', 'v'}, '<A-i>', function()
     vim.cmd('+tabmove')
   end
 end, { desc = 'Move tab right' })
+
+
+-- playing macros
+vim.keymap.set("n", "@", function()
+  local reg = vim.fn.getcharstr()
+  vim.schedule(function()
+    vim.cmd("silent! normal! @" .. reg)
+  end)
+end, { noremap = true, desc = "Play macro silently" })
+
