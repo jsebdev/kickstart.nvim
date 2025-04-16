@@ -147,8 +147,8 @@ end, { desc = 'Move tab right' })
 -- playing macros
 vim.keymap.set("n", "@", function()
   local reg = vim.fn.getcharstr()
+  local count = vim.v.count > 0 and vim.v.count or 1
   vim.schedule(function()
-    vim.cmd("silent! normal! @" .. reg)
+    vim.cmd("silent! normal! " .. count .. "@" .. reg)
   end)
-end, { noremap = true, desc = "Play macro silently" })
-
+end, { noremap = true, desc = "Play macro silently with count support" })
