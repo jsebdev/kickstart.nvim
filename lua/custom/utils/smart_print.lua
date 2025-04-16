@@ -17,6 +17,7 @@ M.print_current_line_with_formats = function(expr_format, eval_format)
 
     -- Replace the original line with the two print lines
     vim.api.nvim_buf_set_lines(bufnr, row - 1, row, false, { print_expr, print_eval })
+    vim.cmd('normal! j') -- Move cursor down to the next line
 end
 
 return M
