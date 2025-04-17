@@ -1,4 +1,4 @@
--- local map = require('custom.utils.keymap').defaultMap
+local opts = { noremap = true, silent = true }
 
 -- reload config
 vim.keymap.set('n', '<leader>xs', function()
@@ -23,9 +23,10 @@ vim.keymap.set('n', '<leader>wQ', ':qa<cr>', { desc = '[W]orkspace [Q]uit all' }
 vim.keymap.set('n', '<leader>wq', function()
   require('custom.utils.smart_windows_close').smart_windows_close(_G.closed_buffers)
 end, { desc = '[W]orkspace [q]quit' })
-vim.keymap.set('n', '<C-q>', function()
+vim.keymap.set('n', '<C-w>', function()
   require('custom.utils.smart_windows_close').smart_windows_close(_G.closed_buffers)
 end, { desc = '[W]orkspace [q]quit' })
+vim.keymap.set('n', '<leader>wo', ':only<cr>', { desc = '[W]orkspace leave [o]nly this windows open' })
 
 vim.keymap.set('n', '<leader>wr', function()
   require('custom.utils.open_closed_buffer').open_closed_buffer(_G.closed_buffers)
@@ -60,19 +61,19 @@ end, { desc = "[W]orkspace [C]lose all other tabs" })
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = '[W]orkspace split [V]ertically' })
 vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = '[W]orkspace split [H]orizontally' })
 
-vim.keymap.set('n', '<C-w>h', function()
+vim.keymap.set('n', '<A-w>h', function()
   local count = vim.v.count > 0 and vim.v.count or 2
   vim.cmd('vertical resize -' .. count)
 end, { desc = '[W]orkspace Resize window left [H]' })
-vim.keymap.set('n', '<C-w>l', function()
+vim.keymap.set('n', '<A-w>l', function()
   local count = vim.v.count > 0 and vim.v.count or 2
   vim.cmd('vertical resize +' .. count)
 end, { desc = '[W]orkspace Resize window right [L]' })
-vim.keymap.set('n', '<C-w>j', function()
+vim.keymap.set('n', '<A-w>j', function()
   local count = vim.v.count > 0 and vim.v.count or 2
   vim.cmd('resize -' .. count)
 end, { desc = '[W]orkspace Resize window down [J]' })
-vim.keymap.set('n', '<C-w>k', function()
+vim.keymap.set('n', '<A-w>k', function()
   local count = vim.v.count > 0 and vim.v.count or 2
   vim.cmd('resize +' .. count)
 end, { desc = '[W]orkspace Resize window up [K]' })
@@ -152,3 +153,31 @@ vim.keymap.set("n", "@", function()
     vim.cmd("silent! normal! " .. count .. "@" .. reg)
   end)
 end, { noremap = true, desc = "Play macro silently with count support" })
+
+
+--terminal
+vim.api.nvim_set_keymap('t', 'kj', [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.keymap.set('t', '<C-R>', function()
+  local char = vim.fn.getchar()
+  if type(char) == "number" then
+    char = vim.fn.nr2char(char)
+  end
+  return '<C-\\><C-N>"' .. char .. 'pi'
+end, { expr = true, noremap = true })
+
+
+-- move among windows
+vim.keymap.set('t', '<A-h>', [[<C-\><C-N><C-w>h]], opts)
+vim.keymap.set('t', '<A-j>', [[<C-\><C-N><C-w>j]], opts)
+vim.keymap.set('t', '<A-k>', [[<C-\><C-N><C-w>k]], opts)
+vim.keymap.set('t', '<A-l>', [[<C-\><C-N><C-w>l]], opts)
+vim.keymap.set('i', '<A-h>', [[<C-\><C-N><C-w>h]], opts)
+vim.keymap.set('i', '<A-j>', [[<C-\><C-N><C-w>j]], opts)
+vim.keymap.set('i', '<A-k>', [[<C-\><C-N><C-w>k]], opts)
+vim.keymap.set('i', '<A-l>', [[<C-\><C-N><C-w>l]], opts)
+vim.keymap.set('n', '<A-h>', '<C-w>h', opts)
+vim.keymap.set('n', '<A-j>', '<C-w>j', opts)
+vim.keymap.set('n', '<A-k>', '<C-w>k', opts)
+vim.keymap.set('n', '<A-l>', '<C-w>l', opts)
+
+
