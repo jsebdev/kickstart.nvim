@@ -93,8 +93,8 @@ vim.keymap.set({ 'o', 'x' }, 'iq', require('custom.utils.select_inside_unescaped
 
 -- formating
 vim.keymap.set({'n', 'x'}, '=', function() vim.lsp.buf.format {async = false} end, { desc = 'Autoformat'})
-vim.keymap.set('n', '<leader>cu', 'gUiw', { desc = '[C]ode [u]ppercase'})
-vim.keymap.set('n', '<leader>cU', 'guiw', { desc = '[C]ode lowercase [U]'})
+vim.keymap.set('n', '<leader>cu', 'gUiwe', { desc = '[C]ode [u]ppercase'})
+vim.keymap.set('n', '<leader>cU', 'guiwe', { desc = '[C]ode lowercase [U]'})
 vim.keymap.set('v', '<leader>cu', 'gU', { desc = '[C]ode [u]ppercase'})
 vim.keymap.set('v', '<leader>cU', 'gu', { desc = '[C]ode lowercase [U]'})
 
