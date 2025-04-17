@@ -5,16 +5,6 @@ vim.keymap.set('n', '<leader>xs', function()
   require('custom.utils.reload').reload()
 end, { desc = 'Reload init.lua' })
 
--- automatically close opened parentesis
--- vim.keymap.set('i', '(', '()<esc>i', { desc = 'close parentesis automatically' })
--- vim.keymap.set('i', '{', '{}<esc>i', { desc = 'close parentesis automatically' })
--- vim.keymap.set('i', '[', '[]<esc>i', { desc = 'close parentesis automatically' })
-
--- automatically close opened quotes
--- vim.keymap.set('i', '"', '""<esc>i', { desc = 'close parentesis automatically' })
--- vim.keymap.set('i', "'", "''<esc>i", { desc = 'close parentesis automatically' })
--- vim.keymap.set('i', '`', '``<esc>i', { desc = 'close parentesis automatically' })
-
 -- workspace shortcuts
 vim.keymap.set('n', '<leader>ww', ':w<cr>', { desc = '[W]orkspace [w]rite' })
 vim.keymap.set('n', '<leader>wW', ':wa<cr>', { desc = '[W]orkspace [w]rite all' })
@@ -33,15 +23,11 @@ vim.keymap.set('n', '<leader>wr', function()
 end, { desc = '[W]orkspace [r]eopen last closed buffer' })
 
 -- tab navigation
--- map <C-S-k> in kitty
--- vim.keymap.set('n', '<Esc>[1;6A', ':tabnext<CR>', { noremap = true, silent = true })
--- map <C-S-j> in kitty
--- vim.keymap.set('n', '<Esc>[1;6B', ':tabprevious<CR>', { noremap = true, silent = true })
-vim.keymap.set({'n', 'i', 'v'}, '<C-j>', function()
+vim.keymap.set({'n', 'i', 'v', 't'}, '<C-j>', function()
   vim.cmd('stopinsert')
   vim.cmd('tabprevious')
 end, { noremap = true, silent = true })
-vim.keymap.set({'n', 'i', 'v'}, '<C-k>', function()
+vim.keymap.set({'n', 'i', 'v', 't'}, '<C-k>', function()
   vim.cmd('stopinsert')
   vim.cmd('tabnext')
 end, { noremap = true, silent = true })
