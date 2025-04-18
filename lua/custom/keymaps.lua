@@ -132,7 +132,7 @@ end, { desc = 'Move tab right' })
 
 
 -- playing macros
-vim.keymap.set("n", "@", function()
+vim.keymap.set("n", "<leader>@", function()
   local reg = vim.fn.getcharstr()
   local count = vim.v.count > 0 and vim.v.count or 1
   vim.schedule(function()
