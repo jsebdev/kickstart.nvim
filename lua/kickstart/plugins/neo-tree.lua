@@ -36,16 +36,16 @@ return {
       -- If you want icons for diagnostic errors, you'll need to define them somewhere.
       -- In Neovim v0.10+, you can configure them in vim.diagnostic.config(), like:
       --
-      -- vim.diagnostic.config({
-      --   signs = {
-      --     text = {
-      --       [vim.diagnostic.severity.ERROR] = '',
-      --       [vim.diagnostic.severity.WARN] = '',
-      --       [vim.diagnostic.severity.INFO] = '',
-      --       [vim.diagnostic.severity.HINT] = '󰌵',
-      --     },
-      --   }
-      -- })
+      vim.diagnostic.config({
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.INFO] = '',
+            [vim.diagnostic.severity.HINT] = '󰌵',
+          },
+        }
+      })
       --
       -- In older versions, you can define the signs manually:
       -- vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
@@ -82,7 +82,7 @@ return {
             last_indent_marker = "└",
             highlight = "NeoTreeIndentMarker",
             -- expander config, needed for nesting files
-            with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
+            with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
             expander_collapsed = "",
             expander_expanded = "",
             expander_highlight = "NeoTreeExpander",
@@ -197,7 +197,7 @@ return {
               -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
               -- some commands may take optional config options, see `:h neo-tree-mappings` for details
               config = {
-                show_path = "none", -- "none", "relative", "absolute"
+                show_path = "relative", -- "none", "relative", "absolute"
               },
             },
             ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
@@ -235,10 +235,11 @@ return {
         },
         nesting_rules = {},
         filesystem = {
+          -- find_by_full_path_words = true,
           filtered_items = {
-            visible = false, -- when true, they will just be displayed differently than normal items
+            visible = true, -- when true, they will just be displayed differently than normal items
             hide_dotfiles = true,
-            hide_gitignored = true,
+            hide_gitignored = false,
             hide_hidden = true, -- only works on Windows for hidden files/directories
             hide_by_name = {
               --"node_modules"
@@ -369,7 +370,7 @@ return {
       })
 
       vim.keymap.set("n", "<leader>ee", "<Cmd>Neotree toggle=true<CR>")
-      vim.keymap.set("n", "<leader>ef", "<Cmd>Neotree reveal toggle=true<CR>")
+      vim.keymap.set("n", "<leader>ef", "<Cmd>Neotree reveal<CR>")
     end,
   },
 }
