@@ -74,7 +74,7 @@ function M.setup()
   vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
   vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
   vim.keymap.set('n', '<leader>scw', builtin.grep_string, { desc = '[S]earch [C]urrent [W]ord' })
-  vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+  vim.keymap.set('n', '<leader>sgg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
   vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
   vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
   vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
@@ -110,6 +110,25 @@ function M.setup()
       additional_args = { '--no-ignore'},
     }
   end, { desc = '[S]earch in [A]ll Files' })
+
+  -- custom live grep
+  vim.keymap.set('n', '<leader>sgp', function()
+    builtin.live_grep {
+      prompt_title = 'Live grep in Python files',
+      additional_args = function(opts)
+        return { "--glob=*.py" }
+      end
+    }
+  end, { desc = '[S]earch Python files' })
+
+  vim.keymap.set('n', '<leader>sgt', function()
+    builtin.live_grep {
+      prompt_title = 'Live grep in TypeScript files',
+      additional_args = function(opts)
+        return { "--glob=*.ts" }
+      end
+    }
+  end, { desc = '[S]earch TypeScript files' })
 end
 
 return M
