@@ -3,17 +3,17 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  {
-    'nvim-tree/nvim-tree.lua',
-    version = '*',
-    lazy = false,
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    config = function()
-      require('custom.plugin_config.nvimtree').setup()
-    end,
-  },
+  -- {
+  --   'nvim-tree/nvim-tree.lua',
+  --   version = '*',
+  --   lazy = false,
+  --   dependencies = {
+  --     'nvim-tree/nvim-web-devicons',
+  --   },
+  --   config = function()
+  --     require('custom.plugin_config.nvimtree').setup()
+  --   end,
+  -- },
   {
     'nvimtools/none-ls.nvim',
     dependencies = {
