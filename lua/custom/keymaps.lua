@@ -13,7 +13,7 @@ vim.keymap.set('n', '<leader>wQ', ':qa<cr>', { desc = '[W]orkspace [Q]uit all' }
 vim.keymap.set('n', '<leader>wq', function()
   require('custom.utils.smart_windows_close').smart_windows_close(_G.closed_buffers)
 end, { desc = '[W]orkspace [q]quit' })
-vim.keymap.set('n', '<C-w>', function()
+vim.keymap.set('n', '<C-w><C-w>', function()
   require('custom.utils.smart_windows_close').smart_windows_close(_G.closed_buffers)
 end, { desc = '[W]orkspace [q]quit' })
 vim.keymap.set('n', '<leader>wo', ':only<cr>', { desc = '[W]orkspace leave [o]nly this windows open' })
