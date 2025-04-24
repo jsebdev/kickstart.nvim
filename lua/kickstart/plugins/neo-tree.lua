@@ -172,10 +172,7 @@ return {
             ["f"] = "noop",
             ["f/"] = "fuzzy_finder",
             ["ff"] = "filter_on_submit",
-            ["<space>"] = {
-              "toggle_node",
-              nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
-            },
+            ["<space>"] = "noop",
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
             ["<esc>"] = "cancel", -- close preview or floating neo-tree window
