@@ -170,8 +170,6 @@ return {
           mappings = {
             ["/"] = "noop",
             ["f"] = "noop",
-            ["f/"] = "fuzzy_finder",
-            ["ff"] = "filter_on_submit",
             ["<space>"] = "noop",
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
@@ -279,6 +277,8 @@ return {
           -- instead of relying on nvim autocmd events.
           window = {
             mappings = {
+              ["f/"] = "fuzzy_finder",
+              ["ff"] = "filter_on_submit",
               ["<bs>"] = "navigate_up",
               ["."] = "set_root",
               ["H"] = "toggle_hidden",
