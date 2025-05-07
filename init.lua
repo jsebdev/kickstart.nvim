@@ -988,5 +988,3 @@ require 'custom/options'
 -- autocmds
 require 'custom.autocmds.reload_file'
 
--- spellchecker config
-require 'custom.plugin_config.spenluker'

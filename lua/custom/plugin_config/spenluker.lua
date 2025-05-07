@@ -34,3 +34,4 @@ vim.cmd(
     error_color
   )
 )
+print("Spelunker.vim loaded with custom settings.")
