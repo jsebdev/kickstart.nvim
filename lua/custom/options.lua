@@ -8,7 +8,7 @@ vim.o.foldenable = true
 vim.o.foldlevel = 1
 
 -- spell checking
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = { 'en_us' }
 
 -- looks
