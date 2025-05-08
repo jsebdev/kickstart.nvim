@@ -1,5 +1,10 @@
 local M = {}
 
+local function set_buffer_keymap(buf, mode, lhs, rhs, opts)
+  opts = vim.tbl_extend('force', { noremap = true, silent = true }, opts or {})
+  vim.api.nvim_buf_set_keymap(buf, mode, lhs, rhs, opts)
+end
+
 M.toggle_big_files_stuff = function()
   local buf = vim.api.nvim_get_current_buf()
 
@@ -26,7 +31,11 @@ M.toggle_big_files_stuff = function()
       vim.lsp.buf_detach_client(buf, client.id)
     end
 
+    set_buffer_keymap(buf, 'n', '<C-u>', '<Nop>')
+    set_buffer_keymap(buf, 'n', '<C-d>', '<Nop>')
+
     vim.b[buf].big_file_mode = true
+
     vim.notify("Big file mode ON", vim.log.levels.INFO)
   else
     -- Re-enable filetype
@@ -44,6 +53,9 @@ M.toggle_big_files_stuff = function()
         vim.lsp.buf_attach_client(buf, client.id)
       end
     end
+
+    set_buffer_keymap(buf, 'n', '<C-u>', '<C-u>')
+    set_buffer_keymap(buf, 'n', '<C-d>', '<C-d>')
 
     vim.b[buf].big_file_mode = false
     vim.notify("Big file mode OFF", vim.log.levels.INFO)
