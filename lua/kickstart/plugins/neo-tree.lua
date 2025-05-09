@@ -190,7 +190,8 @@ return {
             --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
             ["C"] = "close_node",
             -- ['C'] = 'close_all_subnodes',
-            ["z"] = "close_all_nodes",
+            ["<leader>z"] = "close_all_nodes",
+            ["z"] = "noop",
             --["Z"] = "expand_all_nodes",
             --["Z"] = "expand_all_subnodes",
             ["a"] = {
