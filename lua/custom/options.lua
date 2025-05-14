@@ -17,3 +17,9 @@ vim.api.nvim_set_hl(0, "Visual", { bg = "#555555", fg = "#000000" })
 
 -- autocomplete in command line
 vim.opt.wildmode = "longest:full,full"
+
+-- indentation
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
