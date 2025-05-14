@@ -171,3 +171,9 @@ vim.keymap.set({'n', 'v'}, '<A-k>', '<C-w>k', opts)
 vim.keymap.set({'n', 'v'}, '<A-l>', '<C-w>l', opts)
 
 
+-- copy to clipboard
+vim.keymap.set('n', '<leader>y', function()
+  local path = vim.fn.expand('%')
+  vim.fn.setreg('+', path)
+  print('Copied to clipboard: ' .. path)
+end, { desc = 'Copy relative file path to clipboard' })
