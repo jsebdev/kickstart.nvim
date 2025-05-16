@@ -146,7 +146,7 @@ end, { noremap = true, desc = "Play macro silently with count support" })
 
 
 --terminal
-vim.keymap.set('n', '<A-t>', function()
+vim.keymap.set('n', '<A-t>n', function()
   require('custom.utils.toggle_terminal').toggle_terminal('new tab')
 end, { desc = 'Terminal in new tab' })
 vim.keymap.set('n', '<A-t>t', function()
