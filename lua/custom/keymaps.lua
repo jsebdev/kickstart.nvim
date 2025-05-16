@@ -146,6 +146,19 @@ end, { noremap = true, desc = "Play macro silently with count support" })
 
 
 --terminal
+vim.keymap.set('n', '<A-t>', function()
+  require('custom.utils.toggle_terminal').toggle_terminal('new tab')
+end, { desc = 'Terminal in new tab' })
+vim.keymap.set('n', '<A-t>t', function()
+  require('custom.utils.toggle_terminal').toggle_terminal('in place')
+end, { desc = 'Terminal in place' })
+vim.keymap.set('n', '<A-t>v', function()
+  require('custom.utils.toggle_terminal').toggle_terminal('vertical')
+end, { desc = 'Terminal vertically' })
+vim.keymap.set('n', '<A-t>h', function()
+  require('custom.utils.toggle_terminal').toggle_terminal('horizontal')
+end, { desc = 'Terminal horizontally' })
+
 vim.api.nvim_set_keymap('t', 'kj', [[<C-\><C-n>]], { noremap = true, silent = true })
 vim.keymap.set('t', '<C-R>', function()
   local char = vim.fn.getchar()
