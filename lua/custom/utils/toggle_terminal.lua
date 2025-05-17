@@ -1,9 +1,7 @@
 local M = {}
 
-M.toggle_terminal = function(location)
-  if vim.bo.buftype == 'terminal' then
-    vim.cmd('q')
-  elseif location == 'new tab' then
+M.open_terminal = function(location)
+  if location == 'new tab' then
     vim.cmd('tab terminal')
   else
     if location == 'horizontal' then
