@@ -50,21 +50,22 @@ end, { desc = "[W]orkspace [C]lose all other tabs" })
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = '[W]orkspace split [V]ertically' })
 vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = '[W]orkspace split [H]orizontally' })
 
-local default_resize_window_count = 20
+local default_horizontal_resize_window_count = 20
+local default_vertical_resize_window_count = 10
 vim.keymap.set('n', '<A-w>h', function()
-  local count = vim.v.count > 0 and vim.v.count or default_resize_window_count
+  local count = vim.v.count > 0 and vim.v.count or default_horizontal_resize_window_count
   vim.cmd('vertical resize -' .. count)
 end, { desc = '[W]orkspace Resize window left [H]' })
 vim.keymap.set('n', '<A-w>l', function()
-  local count = vim.v.count > 0 and vim.v.count or default_resize_window_count
+  local count = vim.v.count > 0 and vim.v.count or default_horizontal_resize_window_count
   vim.cmd('vertical resize +' .. count)
 end, { desc = '[W]orkspace Resize window right [L]' })
 vim.keymap.set('n', '<A-w>j', function()
-  local count = vim.v.count > 0 and vim.v.count or default_resize_window_count
+  local count = vim.v.count > 0 and vim.v.count or default_vertical_resize_window_count
   vim.cmd('resize -' .. count)
 end, { desc = '[W]orkspace Resize window down [J]' })
 vim.keymap.set('n', '<A-w>k', function()
-  local count = vim.v.count > 0 and vim.v.count or default_resize_window_count
+  local count = vim.v.count > 0 and vim.v.count or default_vertical_resize_window_count
   vim.cmd('resize +' .. count)
 end, { desc = '[W]orkspace Resize window up [K]' })
 
