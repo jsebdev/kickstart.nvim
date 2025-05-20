@@ -5,7 +5,7 @@ vim.opt.backupcopy = 'yes'
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = true
-vim.o.foldlevel = 1
+vim.o.foldlevel = 99
 
 -- spell checking
 vim.opt.spell = false
