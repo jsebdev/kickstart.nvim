@@ -50,6 +50,7 @@ function M.setup()
           '--glob', '!**/node_modules/*',
           '--glob', '!**/.angular/*',
           '--glob', '!**/__pycache__/*',
+          '--glob', '!**/.terraform/*',
         },
       },
       live_grep = {
