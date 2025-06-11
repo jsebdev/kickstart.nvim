@@ -617,7 +617,17 @@ require('lazy').setup({
             config.settings.python.pythonPath = require('custom.utils.get_python_path').get_python_path()
           end
         },
-        -- pylsp = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                flake8 = {
+                  enabled = true, -- Enable flake8 plugin
+                },
+              },
+            },
+          },
+        },
         --
 
         lua_ls = {
