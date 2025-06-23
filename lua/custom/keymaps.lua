@@ -90,7 +90,6 @@ vim.keymap.set('v', '<leader>cu', 'gU', { desc = '[C]ode [u]ppercase'})
 vim.keymap.set('v', '<leader>cU', 'gu', { desc = '[C]ode lowercase [U]'})
 
 -- esc insertmode
-vim.keymap.set('i', '<Esc>', '<Nop>', { noremap = true })
 vim.keymap.set('i', 'kj', '<Esc>', {noremap = true, silent = true})
 
 -- toggles
