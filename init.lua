@@ -403,8 +403,12 @@ require('lazy').setup({
       {
         'williamboman/mason.nvim',
         opts = { },
+        version = '^1.0.0',
       },
-      'williamboman/mason-lspconfig.nvim',
+      {
+        'williamboman/mason-lspconfig.nvim',
+        version = '^1.0.0',
+      },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
