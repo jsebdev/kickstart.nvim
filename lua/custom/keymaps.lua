@@ -185,8 +185,32 @@ vim.keymap.set({'n', 'v'}, '<A-l>', '<C-w>l', opts)
 
 
 -- copy to clipboard
-vim.keymap.set('n', '<leader>y', function()
+vim.keymap.set('n', '<leader>yy', function()
   local path = vim.fn.expand('%')
   vim.fn.setreg('+', path)
   print('Copied to clipboard: ' .. path)
 end, { desc = 'Copy relative file path to clipboard' })
+
+vim.keymap.set('n', '<leader>yY', function()
+  local path = vim.fn.expand('%:p')
+  vim.fn.setreg('+', path)
+  print('Copied to clipboard: ' .. path)
+end, { desc = 'Copy absolute file path to clipboard' })
+
+vim.keymap.set('n', '<leader>yf', function()
+  local path = vim.fn.expand('%:t')
+  vim.fn.setreg('+', path)
+  print('Copied to clipboard: ' .. path)
+end, { desc = 'Copy file name to clipboard' })
+
+vim.keymap.set('n', '<leader>yp', function()
+  local path = vim.fn.expand('%:p:h')
+  vim.fn.setreg('+', path)
+  print('Copied to clipboard: ' .. path)
+end, { desc = 'Copy file path to clipboard' })
+
+vim.keymap.set('n', '<leader>yr', function()
+  local path = vim.fn.getcwd()
+  vim.fn.setreg('+', path)
+  print('Copied to clipboard: ' .. path)
+end, { desc = 'Copy root path to clipboard' })
