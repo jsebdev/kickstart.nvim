@@ -12,16 +12,22 @@ vim.g.spelunker_disable_account_name_checking = 1
 vim.g.spelunker_disable_acronym_checking = 1
 vim.g.spelunker_disable_backquoted_checking = 1
 vim.g.spelunker_disable_auto_group = 0
-vim.cmd([[
-augroup spelunker
-  autocmd!
-  " Setting for g:spelunker_check_type = 1:
-  autocmd BufWinEnter,BufWritePost *.vim,*.js,*.jsx,*.json,*.md,*.ts call spelunker#check()
 
-  " Setting for g:spelunker_check_type = 2:
-  autocmd CursorHold *.vim,*.js,*.jsx,*.json,*.md,*.ts call spelunker#check_displayed_words()
-augroup END
-]])
+local spellcheck_filetypes = {
+  "vim", "js", "jsx", "json", "md", "ts", "html", "css", "scss"
+}
+
+local pattern = table.concat(
+  vim.tbl_map(function(ext) return "*." .. ext end, spellcheck_filetypes),
+  ","
+)
+
+vim.cmd("augroup spelunker")
+vim.cmd("autocmd!")
+vim.cmd("autocmd BufWinEnter,BufWritePost " .. pattern .. " call spelunker#check()")
+vim.cmd("autocmd CursorHold " .. pattern .. " call spelunker#check_displayed_words()")
+vim.cmd("augroup END")
+
 vim.g.spelunker_spell_bad_group = "SpelunkerSpellBad"
 vim.g.spelunker_complex_or_compound_word_group = "SpelunkerComplexOrCompoundWord"
 
