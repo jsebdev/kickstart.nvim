@@ -214,3 +214,7 @@ vim.keymap.set('n', '<leader>yr', function()
   vim.fn.setreg('+', path)
   print('Copied to clipboard: ' .. path)
 end, { desc = 'Copy root path to clipboard' })
+
+
+-- copy to question file
+vim.keymap.set('n', '<leader>aq', require('custom.utils.add_file_to_question').pick_file_and_append, { desc = '[A]dd [F]ile to question' })
