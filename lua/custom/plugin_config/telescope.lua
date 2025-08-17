@@ -39,6 +39,8 @@ function M.setup()
     defaults = {
       vimgrep_arguments = vimgrep_arguments,
       path_display = { 'smart' },
+      layout_strategy = 'vertical',
+      layout_config = { height = 0.999, width = 0.999 },
     },
     pickers = {
       find_files = {
