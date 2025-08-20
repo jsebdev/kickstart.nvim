@@ -132,7 +132,7 @@ function M.setup()
     builtin.live_grep {
       prompt_title = 'Live grep in TypeScript files',
       additional_args = function(opts)
-        return { "--glob=*.ts" }
+        return { "--glob=*.ts", "--glob=*.tsx" }
       end
     }
   end, { desc = '[S]earch TypeScript files' })
