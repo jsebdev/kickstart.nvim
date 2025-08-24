@@ -38,7 +38,7 @@ function M.setup()
     -- },
     defaults = {
       vimgrep_arguments = vimgrep_arguments,
-      path_display = { 'smart' },
+      path_display = { 'filename_first' },
       layout_strategy = 'vertical',
       layout_config = {
         height = 0.99,
