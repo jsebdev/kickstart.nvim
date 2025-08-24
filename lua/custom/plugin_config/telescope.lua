@@ -61,6 +61,26 @@ function M.setup()
       },
       live_grep = {
         glob_pattern = { '!**/node_modules/*' },
+        path_display = { 'filename_first' },
+      },
+      grep_string = {
+        path_display = { 'filename_first' },
+      },
+      lsp_references = {
+        path_display = { 'filename_first' },
+        show_line = false,
+      },
+      lsp_definitions = {
+        path_display = { 'filename_first' },
+        show_line = false,
+      },
+      lsp_implementations = {
+        path_display = { 'filename_first' },
+        show_line = false,
+      },
+      lsp_type_definitions = {
+        path_display = { 'filename_first' },
+        show_line = false,
       },
     },
     extensions = {
