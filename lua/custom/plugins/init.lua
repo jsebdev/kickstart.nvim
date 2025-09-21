@@ -204,4 +204,8 @@ return {
       require("lsp-file-operations").setup()
     end,
   },
+  {
+    "3rd/image.nvim",
+    opts = {}
+  },
 }
